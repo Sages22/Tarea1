@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Scaffolds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th>Post</th>
+      <th>Reference</th>
+      <th>Body</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scaffolds.each do |scaffold| %>
+      <tr>
+        <td><%= scaffold.Comment %></td>
+        <td><%= scaffold.post %></td>
+        <td><%= scaffold.reference %></td>
+        <td><%= scaffold.body %></td>
+        <td><%= scaffold.text %></td>
+        <td><%= link_to 'Show', scaffold %></td>
+        <td><%= link_to 'Edit', edit_scaffold_path(scaffold) %></td>
+        <td><%= link_to 'Destroy', scaffold, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scaffold', new_scaffold_path %>
